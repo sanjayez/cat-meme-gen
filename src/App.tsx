@@ -4,21 +4,30 @@ import TabPanel from './components/TabPanel';
 import InputForm from './components/InputForm';
 import TabContent from './components/TabContent';
 import HowToSection from './components/HowToSection';
+import { useToast } from './components/ToastProvider';
+import { validateInput } from './common/helpers';
 
 function App() {
   const [activeTab, setActiveTab] = useState('Image');
   const [inputValue, setInputValue] = useState('');
+  const { addToast } = useToast();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInputValue(e.target.value);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Submitted:', inputValue);
-    // Optionally, reset the input afterward
+
+    const error = validateInput(inputValue);
+    if (error) {
+      addToast(error, 'failed', 1000);
+      return;
+    }
+
     setInputValue('');
+    addToast('Meme generated successfully', 'success', 1000);
+
   };
 
   return (

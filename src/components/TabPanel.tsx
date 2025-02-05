@@ -11,7 +11,7 @@ const TabPanel: React.FC<TabPanelProps> = ({ activeTab, setActiveTab }) => {
       <button
         onClick={() => setActiveTab('Image')}
         className={`px-3 py-2 border-b-2 cursor-pointer text-sm md:text-base ${
-          activeTab === 'Image' ? 'border-blue-500 text-white' : 'border-transparent text-gray-400'
+          activeTab === 'Image' ? 'border-white text-white' : 'border-transparent text-gray-400'
         }`}
       >
         Image
@@ -19,7 +19,7 @@ const TabPanel: React.FC<TabPanelProps> = ({ activeTab, setActiveTab }) => {
       <button
         onClick={() => setActiveTab('GIF')}
         className={`px-3 py-2 border-b-2 cursor-pointer text-sm md:text-base ${
-          activeTab === 'GIF' ? 'border-blue-500 text-white' : 'border-transparent text-gray-400'
+          activeTab === 'GIF' ? 'border-white text-white' : 'border-transparent text-gray-400'
         }`}
       >
         GIF
