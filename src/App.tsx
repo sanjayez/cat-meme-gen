@@ -21,12 +21,12 @@ function App() {
 
     const error = validateInput(inputValue);
     if (error) {
-      addToast(error, 'failed', 1000);
+      addToast(error, 'failed', 2000);
       return;
     }
 
     setInputValue('');
-    addToast('Meme generated successfully', 'success', 1000);
+    addToast('Meme generated successfully', 'success', 2000);
 
   };
 
