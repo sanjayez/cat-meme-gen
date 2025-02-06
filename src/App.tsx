@@ -31,7 +31,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-violet-500 px-4">
+    <div className="min-h-screen bg-violet-400 px-4">
       <Header title="Cat meme-gen" />
       <main className="p-4 max-w-4xl mx-auto">
         <TabPanel activeTab={activeTab} setActiveTab={setActiveTab} />
